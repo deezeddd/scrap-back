@@ -1,0 +1,74 @@
+TASK-1 
+
+
+
+
+TASK-2
+
+EMAIL OTP VERIFICATION -> THEN CREATE AN ACCOUNT
+
+TASK-3 
+
+
+TASK-4
+MONGODB STORE 
+
+TASK-5
+API DOCUMENT
+
+
+TASK-6
+ADMIN ACCESS ONLY TO CERTAIN APIS -> Middleware used
+
+TASK-7
+
+DONE without security(LOGIN, SIGNUP) also passing data in params, LOGOUT FEATURES
+SETUP JWT
+PASSWORD RESET 
+
+
+req.body vs params
+
+
+
+HOW TO WRITE THOUGHtS CLEARER
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------
+
+
+
+LOGIN -> JWT
+ADMIN -> MIDDLEWARE
+
+SIGNUP -> HASHING
+
+
+
+CRUD FUCKS-:
+
+INQUIRE FOR THE SCRAP! ->scrap data
+DISPLAY ALL THE INQUIRIES -> create inquiry
+    -Weight, Type of product, contact details, date etc
+
+
+USER - CRUD
+    -FUNCTIONALITIES INCOMPLETED:
+        :HASHING
+    -FUNCTIONALITIES COMPLETED:
+        :SIGNUP
+        :LOGIN
+
+RATE - CRUD
+    -FUNCTIONALITIES INCOMPLETED:
+    -FUNCTIONALITIES COMPLETED:
+        :CRUD
+
+
+
