@@ -1,0 +1,12 @@
+{
+    PORT: '8080', 
+    EMAIL: 'test@gmail.com', //Enter your Gmail
+    PASS: 'tvfajxbyqjasyqhw'  //Enter App password from Gmail
+
+    URI: "mongodb+srv://<Username>:<password>@<db>.qnnvada.mongodb.net/<PapaScrapDB>?retryWrites=true&w=majority"
+    //Enter your mongoDB Url
+}
+ 
+
+//Make .env file and remove all comments and ensure the values are correct as displayed
+
