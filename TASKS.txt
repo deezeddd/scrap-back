@@ -9,13 +9,11 @@ TASK-5
 API DOCUMENT
 
 TASK-6
-ADMIN ACCESS ONLY TO CERTAIN APIS -> Middleware used
+
 
 TASK-7
 
-DONE without security(LOGIN, SIGNUP) also passing data in params, LOGOUT FEATURES
-SETUP JWT
-PASSWORD RESET 
+
 
 req.body vs params
 
@@ -55,7 +53,7 @@ DISPLAY ALL THE INQUIRIES -> create inquiry
 
 USER - CRUD
     -FUNCTIONALITIES INCOMPLETED:
-        [ ]:HASHING
+        [X]:HASHING
         [ ]: Address!
     -FUNCTIONALITIES COMPLETED:
         [X]:SIGNUP
@@ -72,3 +70,29 @@ OTP
             -Generate OTP code, verify it
     -FUNCTIONALITIES COMPLETED:
 
+
+
+-NODEMON REMOVE FROM PROD
+
+
+NOTE
+...//Both AuthfromHeader middlware methods works in pair
+// Until Token is in Header we can access the Apis -> Store token in localstorage access apis through that Token and 
+// after that when user logout remove token from localstorage
+
+
+
+
+25/04/24
+(remaining)
+
+
+
+SOME TODOs left and 
+Mail = OTP service 
+User Phn and Address
+if possible change naming convention of ratelist to product
+
+PASSWORD RESET -> Align with OTP
+or login with EMAIL 
+REmove nodemon

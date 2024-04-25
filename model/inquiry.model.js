@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import mongooseSequence from 'mongoose-sequence';
-import User from "./user.model";
+import User from "./user.model.js";
 
 const InquirySchema = new mongoose.Schema({
     inquiryId:{
@@ -10,13 +10,9 @@ const InquirySchema = new mongoose.Schema({
     },
     productId:{
         type: Number,
-        required:true,
-    },
-    productName:{
-        type: String,
         required: true
-    }, 
-    price:{
+    },
+    userId:{
         type: Number,
         required: true
     },
@@ -26,12 +22,9 @@ const InquirySchema = new mongoose.Schema({
     },
     inqiryDate:{
         type: Date,
-        required: true
+        required: true,
+        default: Date.now()
     },
-    userDetails:{
-        type: User,
-        required: true
-    }
     },
     {timestamps:true}
 );

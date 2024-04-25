@@ -1,20 +1,27 @@
 import express from 'express';
 import { createRate, getAllRates, getRateById, updateRate, deleteRate } from '../controller/rateController.js';
+import { restrictTo, restrictToLoggedInUserOnly } from '../middleware/authFromHeader.js';
+
+
 
 const router = express.Router();
 
-router.route('/')
+router.route('/addproduct')
   // CREATE operation
+  .all(restrictToLoggedInUserOnly,restrictTo(["Admin"]))
   .post(async (req, res) => {
     try {
-        console.log(req.body)
+      console.log(req.body)
       const newRate = await createRate(req.body);
       res.status(201).json(newRate);
     } catch (error) {
       res.status(400).json({ error: error.message });
     }
   })
+
+
   // READ operation (get all rates)
+  router.route('/getallrates')
   .get(async (req, res) => {
     try {
       const rates = await getAllRates();
@@ -24,11 +31,11 @@ router.route('/')
     }
   });
 
-router.route('/:id')
+
   // READ operation (get rate by ID)
+router.route('/:id')
   .get(async (req, res) => {
     const productId = req.params.id; 
-
     try {
       const rate = await getRateById(productId);
       if (!rate) {
@@ -40,7 +47,9 @@ router.route('/:id')
       res.status(400).json({ error: error.message });
     }
   })
-  // UPDATE operation
+
+                  // UPDATE operation
+  .all(restrictToLoggedInUserOnly,restrictTo(["Admin"]))
   .put(async (req, res) => {
     const productId = req.params.id;
     try {
@@ -50,7 +59,8 @@ router.route('/:id')
       res.status(400).json({ error: error.message });
     }
   })
-  // DELETE operation
+
+                 // DELETE operation
   .delete(async (req, res) => {
     const productId = req.params.id;
     try {

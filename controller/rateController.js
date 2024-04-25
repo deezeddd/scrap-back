@@ -33,8 +33,8 @@ const getRateById = async (productId) => {
 
 // UPDATE operation
 const updateRate = async (productId, updatedData) => {
-  try {
-    const rate = await Rate.findOneAndUpdate(productId, updatedData, { new: true });
+  try {  
+    const rate = await Rate.findOneAndUpdate({ "productId":productId }, updatedData, { new: true });
     return rate;
   } catch (error) {
     throw new Error('Could not update rate: ' + error.message);
@@ -44,9 +44,13 @@ const updateRate = async (productId, updatedData) => {
 // DELETE operation
 const deleteRate = async (productId) => {
   try {
+
+    const rate = await Rate.findOne({ productId });
+    if(!rate){
+      return 'Product Does not Exist';
+    }
     await Rate.findOneAndDelete({ productId });
 
-    // await Rate.findByIdAndDelete(productId);
     return 'Rate deleted successfully';
   } catch (error) {
     throw new Error('Could not delete rate: ' + error.message);

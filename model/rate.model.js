@@ -15,7 +15,6 @@ const RateSchema = new mongoose.Schema({
         type: Number,
         required: true
     }
- 
 });
 RateSchema.plugin(mongooseSequence(mongoose), { inc_field: 'productId' });
 

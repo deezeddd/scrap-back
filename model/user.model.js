@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import mongooseSequence from 'mongoose-sequence';
 import {createHmac, randomBytes} from 'crypto';
-import {setTokenForUser,validateToken}  from '../service/auth.js'
+import {setTokenForUser,validateToken}  from '../service/authJwt.js'
 
 const UserSchema = new mongoose.Schema({
     userId:{
@@ -61,7 +61,7 @@ UserSchema.static('matchPasswordAndGenerateToken', async function(email,password
     
     if (hashedPassword !== userProvidedHash) throw new Error("Incorrect Password")
 
-    const token = setTokenForUser(user)
+    const token = setTokenForUser(user)  //called from service-auth.js
     return token
 })
 
